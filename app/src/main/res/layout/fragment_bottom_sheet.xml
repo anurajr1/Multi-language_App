@@ -37,12 +37,21 @@
 
             <ImageView
                 android:id="@+id/flagView_english"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="0dp"
                 android:src="@drawable/flag_us" />
+
+            <ImageView
+                android:id="@+id/tick_english"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/tick" />
 
 
             <TextView
@@ -66,12 +75,21 @@
 
             <ImageView
                 android:id="@+id/flagView_hindi"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="0dp"
                 android:src="@drawable/flag_in" />
+
+            <ImageView
+                android:id="@+id/tick_hindi"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/tick" />
 
 
             <TextView
@@ -95,13 +113,20 @@
 
             <ImageView
                 android:id="@+id/flagView_russsia"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="0dp"
                 android:src="@drawable/flag_ru" />
-
+            <ImageView
+                android:id="@+id/tick_russia"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/tick" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -137,13 +162,20 @@
 
             <ImageView
                 android:id="@+id/flagView_thai"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="0dp"
                 android:src="@drawable/flag_th" />
-
+            <ImageView
+                android:id="@+id/tick_thai"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/tick" />
 
             <TextView
                 android:layout_width="wrap_content"
