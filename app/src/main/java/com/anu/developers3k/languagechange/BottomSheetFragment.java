@@ -65,17 +65,17 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
             });
         }
 
-        Button openBottomSheetButton = (Button) view.findViewById(R.id.cash);
-        openBottomSheetButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                //to close the bottom sheet
-                ((BottomSheetBehavior) behavior).setState(BottomSheetBehavior.STATE_HIDDEN);
-
-                Toast.makeText(getContext(), "Bottom Sheet State Changed to: ", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        Button openBottomSheetButton = (Button) view.findViewById(R.id.cash);
+//        openBottomSheetButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                //to close the bottom sheet
+//                ((BottomSheetBehavior) behavior).setState(BottomSheetBehavior.STATE_HIDDEN);
+//
+//                Toast.makeText(getContext(), "Bottom Sheet State Changed to: ", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
         ImageView imageViewClose = (ImageView) view.findViewById(R.id.imageView);
         imageViewClose.setOnClickListener(new View.OnClickListener() {

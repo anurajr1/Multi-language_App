@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -12,36 +13,135 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"
         android:text="Choose Language"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="17dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="149dp"
-        android:orientation="horizontal">
+        android:layout_height="178dp"
+        android:layout_below="@+id/imageView4"
 
-        <Button
-            android:id="@+id/cash"
-            android:layout_width="0dp"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_marginTop="51dp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <RelativeLayout
+            android:id="@+id/one"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="8dp"
             android:layout_weight="1"
-            android:background="@android:color/black"
-            android:text="Cash"
-            android:textColor="@android:color/white" />
+            android:gravity="center"
+            >
 
-        <Button
-            android:layout_width="0dp"
+            <ImageView
+                android:id="@+id/flagView_english"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/flag_us" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/flagView_english"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
+                android:gravity="center"
+                android:text="English\n (US)"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/two"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
             android:layout_weight="1"
-            android:background="@android:color/black"
-            android:text="Card"
-            android:textColor="@android:color/white" />
+            >
 
+            <ImageView
+                android:id="@+id/flagView_hindi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/flag_in" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/flagView_hindi"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
+                android:gravity="center"
+                android:text="हिंदी \n (Hindi)"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:id="@+id/flagView_russsia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/flag_ru" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/flagView_russsia"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
+                android:gravity="center"
+                android:text="русский \n (Russian)"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16dp" />
+        </RelativeLayout>
+
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/four"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--&gt;-->
+
+            <!--<ImageView-->
+                <!--android:id="@+id/flagView_thai"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginTop="0dp"-->
+                <!--android:src="@drawable/flag_in" />-->
+
+
+            <!--<TextView-->
+                <!--android:layout_width="65dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/flagView_thai"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginTop="0dp"-->
+                <!--android:gravity="center"-->
+                <!--android:text="हिंदी \n (Hindi)"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:textSize="16dp" />-->
+        <!--</RelativeLayout>-->
     </LinearLayout>
 
     <ImageView
