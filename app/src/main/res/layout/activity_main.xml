@@ -31,4 +31,18 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.26" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="9dp"
+        android:text="Bottom Sheet"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
