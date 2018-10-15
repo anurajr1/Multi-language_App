@@ -13,7 +13,6 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.anu.developers3k.languagechange.helper.LocaleHelper;
 
@@ -71,9 +70,6 @@ public class BottomSheetFragment extends BottomSheetDialogFragment{
                 System.out.println("no match");
         }
 
-
-
-
         CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) ((View) view.getParent()).getLayoutParams();
         final CoordinatorLayout.Behavior behavior = params.getBehavior();
 
@@ -106,7 +102,6 @@ public class BottomSheetFragment extends BottomSheetDialogFragment{
                             break;
                         }
                     }
-
 //                    Toast.makeText(getContext(), "Bottom Sheet State Changed to: " + state, Toast.LENGTH_SHORT).show();
                 }
 
@@ -115,7 +110,6 @@ public class BottomSheetFragment extends BottomSheetDialogFragment{
                 }
             });
         }
-
 
         //close icon of bottom sheet
         ImageView imageViewClose = (ImageView) view.findViewById(R.id.imageView);
@@ -127,7 +121,6 @@ public class BottomSheetFragment extends BottomSheetDialogFragment{
 
             }
         });
-
 
         //onclick on english language
         ImageView flagEnglish = (ImageView) view.findViewById(R.id.flagView_english);
@@ -175,17 +168,13 @@ public class BottomSheetFragment extends BottomSheetDialogFragment{
 
             }
         });
-
-
-
     }
 
-
+    //to change the language and refresh the screen
     public void setLocale(String localeName) {
         if (!localeName.equals(currentLanguage)) {
             Context context = LocaleHelper.setLocale(getContext(), localeName);
             //Resources resources = context.getResources();
-
             myLocale = new Locale(localeName);
             Resources res = context.getResources();
             DisplayMetrics dm = res.getDisplayMetrics();
@@ -199,6 +188,4 @@ public class BottomSheetFragment extends BottomSheetDialogFragment{
             //Toast.makeText(getActivity(), "Language already selected!", Toast.LENGTH_SHORT).show();
         }
     }
-
-
 }

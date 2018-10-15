@@ -88,11 +88,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void setLocale(String localeName) {
         if (!localeName.equals(currentLanguage)) {
-
             Context context = LocaleHelper.setLocale(this, localeName);
             //Resources resources = context.getResources();
-
-
             myLocale = new Locale(localeName);
             Resources res = context.getResources();
             DisplayMetrics dm = res.getDisplayMetrics();
