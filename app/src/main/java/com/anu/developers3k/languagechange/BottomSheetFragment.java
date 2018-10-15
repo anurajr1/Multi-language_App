@@ -1,13 +1,23 @@
 package com.anu.developers3k.languagechange;
 
 import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.design.widget.CoordinatorLayout;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.anu.developers3k.languagechange.helper.LocaleHelper;
+
+import java.util.Locale;
 
 public class BottomSheetFragment extends BottomSheetDialogFragment{
 
@@ -15,6 +25,12 @@ public class BottomSheetFragment extends BottomSheetDialogFragment{
     ImageView tickHindi;
     ImageView tickRussia;
     ImageView tickThai;
+    MainActivity main;
+    Locale myLocale;
+    String currentLang;
+    String currentLanguage = "en";
+
+
     @Override
     public void setupDialog(Dialog dialog, int style) {
         super.setupDialog(dialog, style);
@@ -22,19 +38,38 @@ public class BottomSheetFragment extends BottomSheetDialogFragment{
         //Set the custom view
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_bottom_sheet, null);
         dialog.setContentView(view);
+        main = new MainActivity();
 
+        //removing all tick mark from the layout
         tickEnglish = (ImageView) view.findViewById(R.id.tick_english);
         tickEnglish.setVisibility(View.GONE);
-
         tickHindi = (ImageView) view.findViewById(R.id.tick_hindi);
         tickHindi.setVisibility(View.GONE);
         tickRussia = (ImageView) view.findViewById(R.id.tick_russia);
         tickRussia.setVisibility(View.GONE);
-
         tickThai = (ImageView) view.findViewById(R.id.tick_thai);
         tickThai.setVisibility(view.GONE);
 
+        currentLanguage = getActivity().getIntent().getStringExtra(currentLang);
 
+        //case for making the tick mark alive
+        switch(LocaleHelper.getLanguage(getContext()))
+        {
+            case "en":
+                tickEnglish.setVisibility(View.VISIBLE);
+                break;
+            case "hi":
+                tickHindi.setVisibility(View.VISIBLE);
+                break;
+            case "ru":
+                tickRussia.setVisibility(View.VISIBLE);
+                break;
+            case "th":
+                tickThai.setVisibility(View.VISIBLE);
+                break;
+            default:
+                System.out.println("no match");
+        }
 
 
 
@@ -87,7 +122,6 @@ public class BottomSheetFragment extends BottomSheetDialogFragment{
         imageViewClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 //to close the bottom sheet
                 ((BottomSheetBehavior) behavior).setState(BottomSheetBehavior.STATE_HIDDEN);
 
@@ -100,12 +134,9 @@ public class BottomSheetFragment extends BottomSheetDialogFragment{
         flagEnglish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-                tickEnglish.setVisibility(View.VISIBLE);
+                setLocale("en");
                 //to close the bottom sheet
                 ((BottomSheetBehavior) behavior).setState(BottomSheetBehavior.STATE_HIDDEN);
-
             }
         });
 
@@ -114,9 +145,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment{
         flagHindi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                tickEnglish.setVisibility(View.VISIBLE);
-
+                setLocale("hi");
                 //to close the bottom sheet
                 ((BottomSheetBehavior) behavior).setState(BottomSheetBehavior.STATE_HIDDEN);
 
@@ -128,8 +157,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment{
         flagRussia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
+                setLocale("ru");
                 //to close the bottom sheet
                 ((BottomSheetBehavior) behavior).setState(BottomSheetBehavior.STATE_HIDDEN);
 
@@ -141,10 +169,9 @@ public class BottomSheetFragment extends BottomSheetDialogFragment{
         flagThai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
+                setLocale("th");
                 //to close the bottom sheet
-               // ((BottomSheetBehavior) behavior).setState(BottomSheetBehavior.STATE_HIDDEN);
+                ((BottomSheetBehavior) behavior).setState(BottomSheetBehavior.STATE_HIDDEN);
 
             }
         });
@@ -152,4 +179,26 @@ public class BottomSheetFragment extends BottomSheetDialogFragment{
 
 
     }
+
+
+    public void setLocale(String localeName) {
+        if (!localeName.equals(currentLanguage)) {
+            Context context = LocaleHelper.setLocale(getContext(), localeName);
+            //Resources resources = context.getResources();
+
+            myLocale = new Locale(localeName);
+            Resources res = context.getResources();
+            DisplayMetrics dm = res.getDisplayMetrics();
+            Configuration conf = res.getConfiguration();
+            conf.locale = myLocale;
+            res.updateConfiguration(conf, dm);
+            Intent refresh = new Intent(getContext(), MainActivity.class);
+            refresh.putExtra(currentLang, localeName);
+            startActivity(refresh);
+        } else {
+            //Toast.makeText(getActivity(), "Language already selected!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
 }
