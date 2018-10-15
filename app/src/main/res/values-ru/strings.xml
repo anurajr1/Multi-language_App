@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Multi_language_Example</string>
-    <string name="thank_you">russian</string>
+    <string name="thank_you">благодарю вас</string>
 </resources>
